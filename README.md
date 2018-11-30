@@ -8,6 +8,8 @@ Some third parties used:
 * [react-reveal](https://github.com/rnosov/react-reveal)
 * [react-slick](https://github.com/akiran/react-slick)
 
+Demo: [http://rfvc-the-venue.surge.sh/](http://rfvc-the-venue.surge.sh/)
+
 ### `npm start`
 
 Runs the app in the development mode.<br>
