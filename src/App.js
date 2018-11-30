@@ -13,10 +13,7 @@ import Footer from './components/Footer';
 class App extends Component {
   render() {
     return (
-      <div
-        className="App"
-        style={{ height: '1500px', backgroundColor: 'blue' }}
-      >
+      <div className="App" style={{ height: '1500px' }}>
         <Header />
 
         <Element name="home">
