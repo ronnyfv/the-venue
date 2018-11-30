@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import Zoom from 'react-reveal/Zoom';
 
 import Button from './../Button';
 
@@ -12,10 +13,11 @@ class Pricing extends PureComponent {
       'Morbi finibus auctor venenatis. Aenean rutrum felis dapibus, iaculis metus in, ultrices ex.',
     ],
     link: ['#balcony', '#medium', '#star'],
+    delay: [500, 0, 500],
   };
 
   render() {
-    const { prices, positions, description, link } = this.state;
+    const { prices, positions, description, link, delay } = this.state;
 
     return (
       <div className="bck_black">
@@ -23,22 +25,24 @@ class Pricing extends PureComponent {
           <h2>Pricing</h2>
           <div className="pricing_wrapper">
             {prices.map((price, index) => (
-              <div className="pricing_item" key={index}>
-                <div className="pricing_inner_wrapper">
-                  <div className="pricing_title">
-                    <span>${prices[index]}</span>
-                    <span>{positions[index]}</span>
-                  </div>
-                  <div className="pricing_description">
-                    {description[index]}
-                  </div>
-                  <div className="pricing_buttons">
-                    <Button link={link[index]} bck="#ffa800" color="#fff">
-                      Purchase tickets
-                    </Button>
+              <Zoom key={index} delay={delay[index]}>
+                <div className="pricing_item">
+                  <div className="pricing_inner_wrapper">
+                    <div className="pricing_title">
+                      <span>${prices[index]}</span>
+                      <span>{positions[index]}</span>
+                    </div>
+                    <div className="pricing_description">
+                      {description[index]}
+                    </div>
+                    <div className="pricing_buttons">
+                      <Button link={link[index]} bck="#ffa800" color="#fff">
+                        Purchase tickets
+                      </Button>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </Zoom>
             ))}
           </div>
         </div>
