@@ -3,6 +3,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import { scroller } from 'react-scroll';
 
 import SideDrawer from './SideDrawer';
 
@@ -38,6 +39,16 @@ class Header extends PureComponent {
     });
   };
 
+  scrollToElement = element => {
+    scroller.scrollTo(element, {
+      duration: 1500,
+      delay: 100,
+      smooth: true,
+      offset: -130,
+    });
+    this.toggleDrawer();
+  };
+
   render() {
     const { drawerOpen, headerShow } = this.state;
 
@@ -67,7 +78,7 @@ class Header extends PureComponent {
           <SideDrawer
             open={drawerOpen}
             closed={this.toggleDrawer}
-            clicked={() => {}}
+            clicked={this.scrollToElement}
           />
         </Toolbar>
       </AppBar>
