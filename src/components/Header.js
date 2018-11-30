@@ -9,6 +9,27 @@ import SideDrawer from './SideDrawer';
 class Header extends PureComponent {
   state = {
     drawerOpen: false,
+    headerShow: false,
+  };
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.hangleScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.hangleScroll);
+  }
+
+  hangleScroll = () => {
+    if (window.scrollY > 0) {
+      this.setState({
+        headerShow: true,
+      });
+    } else {
+      this.setState({
+        headerShow: false,
+      });
+    }
   };
 
   toggleDrawer = () => {
@@ -18,12 +39,13 @@ class Header extends PureComponent {
   };
 
   render() {
-    const { drawerOpen } = this.state;
+    const { drawerOpen, headerShow } = this.state;
+
     return (
       <AppBar
         position="fixed"
         style={{
-          backgroundColor: '#2f2f2f',
+          backgroundColor: headerShow ? '#2f2f2f' : 'transparent',
           boxShadow: 'none',
           padding: '10px 0',
         }}
@@ -42,7 +64,11 @@ class Header extends PureComponent {
             <MenuIcon />
           </IconButton>
 
-          <SideDrawer open={drawerOpen} onClose={this.toggleDrawer} />
+          <SideDrawer
+            open={drawerOpen}
+            closed={this.toggleDrawer}
+            clicked={() => {}}
+          />
         </Toolbar>
       </AppBar>
     );
