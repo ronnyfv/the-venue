@@ -10,7 +10,7 @@ Some third parties used:
 
 Demo: [http://rfvc-the-venue.surge.sh/](http://rfvc-the-venue.surge.sh/)
 
-![Image](/print/capture.png?raw=true)
+![Print](/print/captura.png?raw=true)
 
 ### `npm start`
 
