@@ -4,11 +4,13 @@ Simple landing page project with React.
 
 Some third parties used:
 
-* [react-scroller](https://github.com/fisshy/react-scroll)
-* [react-reveal](https://github.com/rnosov/react-reveal)
-* [react-slick](https://github.com/akiran/react-slick)
+- [react-scroller](https://github.com/fisshy/react-scroll)
+- [react-reveal](https://github.com/rnosov/react-reveal)
+- [react-slick](https://github.com/akiran/react-slick)
 
 Demo: [http://rfvc-the-venue.surge.sh/](http://rfvc-the-venue.surge.sh/)
+
+![Image](/print/capture.png?raw=true)
 
 ### `npm start`
 
